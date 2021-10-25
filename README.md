@@ -89,7 +89,8 @@ Version History
 * The stable version 2.4.x for **ILIAS 5.2 to 5.3** is found in the GitHub branch **master-ilias52**
 * The stable version 2.3.x for **ILIAS 5.0 to 5.1** is found in the GitHub branch **master**
 
-SCRIPT VERSION 3.3.6 (2021-06-15) for ILIAS 6
+
+SCRIPT VERSION 3.3.7 (2021-10-25) for ILIAS 6
 ----------------------------------------
 Use this version only for Testing purposes.
 Contact jesus.copado@fau.de if you have any question.
