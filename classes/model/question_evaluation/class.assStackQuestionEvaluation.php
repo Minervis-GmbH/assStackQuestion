@@ -181,8 +181,7 @@ class assStackQuestionEvaluation
 			{
 				//This input is in a not valid status, so the PRT cannot be evaluated.
 				$this->manageInvalidPRT($potentialresponse_tree, $input_name, $input_state, $accept_valid);
-
-				return FALSE;
+				continue;//Fix HKA
 			}
 		}
 		//If everything correct, return TRUE to evaluate the PRT.

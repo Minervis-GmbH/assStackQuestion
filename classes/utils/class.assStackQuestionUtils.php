@@ -691,6 +691,19 @@ class assStackQuestionUtils
         return $text;
     }
 
+    /**
+     * For a single set, for e.g {1} the input is saved but not displayed. This is due a wrong inerpretation of a single set
+     * as a ILIAS Template variable. 
+     * Solution: escape the { and } characters
+     */
+    public static function _solveSingletonDisplay($input_value)
+    {
+        if(strpos($input_value,'{')!== false AND strpos($input_value,'}') !== false){
+            $input_value = str_replace('{', '&lcub;', $input_value);
+            $input_value = str_replace('}', '&rcub;', $input_value); 
+        }
+        return $input_value;
+    }
 
     public static function _isPhP72()
     {

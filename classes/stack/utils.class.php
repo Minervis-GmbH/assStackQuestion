@@ -1280,7 +1280,7 @@ class stack_utils
             }
             // Safely wrap "let" statements.
             $langlet = strtolower(stack_string('equiv_LET'));
-            if (strtolower(substr($str, 0, strlen($langlet))) === $langlet) {
+            if ($langlet && strtolower(substr($str, 0, strlen($langlet))) === $langlet) {
                 $nv = explode('=', substr($str, strlen($langlet)));
                 if (count($nv) === 2) {
                     $str = 'stacklet('.trim($nv[0]).','.trim($nv[1]).')';
@@ -1305,6 +1305,23 @@ class stack_utils
 
         return $str;
     }
+    public static function get_out_stacklet($expression) {
+        
+        if(strpos($expression, 'stacklet') !== false){
+            $expression = str_replace(',', ' = ', $expression);
+            $expression = str_replace(array('stacklet','(', ')'), '', $expression);  
+        }
+        return $expression;
+    }
+    public static function make_stacklet($expression) {
+        
+        if(strpos($expression, '=') !== false){
+            $expression = str_replace('=', ' , ', $expression);
+            $expression = 'stacklet('.trim($expression) . ')';  
+        }
+        return $expression;
+    }
+
 
     /*
      * This function takes user input of the form "option:arg" and splits them up.
