@@ -339,7 +339,7 @@ class assStackQuestionDisplayGUI
             if ($input_value == "EMPTYANSWER") {
                 $input_value = "";
             }
-            $input_value = assStackQuestionUtils::_solveSingletonDisplay($input_value);
+            
             $input_tpl->setVariable('INPUT_VALUE', $input_value);
         }
 

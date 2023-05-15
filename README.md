@@ -1,14 +1,14 @@
-Copyright 2017 Institut fuer Lern-Innovation,Friedrich-Alexander-Universitaet Erlangen-Nuernberg, GPLv3 or later, see LICENSE
+Copyright 2022 Institut fuer Lern-Innovation,Friedrich-Alexander-Universitaet Erlangen-Nuernberg, GPLv3 or later, see LICENSE
 
 Includes a modified core part of STACK version 3.3
 Copyright 2012 University of Birmingham
 licensed under GPLv3 or later, see classes/stack/COPYING.txt
 http://stack.bham.ac.uk
 
-ILIAS STACK Question Type Plugin.
+ILIAS STACK Question Type Plugin. for ILIAS 7.13+
 ================================
 
-- Author: Jesus Copado <jesus.copado@fim.uni-erlangen.de>, Fred Neumann <fred.neumann@fim.uni-erlangen.de>
+- Author: Jesus Copado <jesus.copado@fau.de> @CopadoJesus, Fred Neumann <fred.neumann@fau.de>
 - Forum: http://www.ilias.de/docu/goto_docu_frm_3474_2766.html
 - Bug Reports: http://www.ilias.de/mantis (Choose project "ILIAS plugins" and filter by category "STACK Question Type")
 
@@ -82,12 +82,44 @@ input you can evaluate your answer (in self assessment mode) or move to the next
 
 Version History
 ===============
-
+* The stable version 3.5 for **ILIAS > 7.12** with the STACK Core version 4.2.2 can be found in the Github branch **master-ilias713**
+* The stable version 3.4.3 for **ILIAS <= 7.12** with the STACK Core version 4.2.2 can be found in the Github branch **master-ilias7**
 * The stable version 3.2.x for **ILIAS 6** with the STACK Core version 4.2.2 can be found in the Github branch **master-ilias6**
 * The stable version 3.1.x for **ILIAS 5.4** with new feedback styles is found in the Github branch **master-ilias54**
 * The stable version 3.0.x for **ILIAS 5.3** with new functionalities from STACK such a new input types is found in the Github branch **master-ilias53**
 * The stable version 2.4.x for **ILIAS 5.2 to 5.3** is found in the GitHub branch **master-ilias52**
 * The stable version 2.3.x for **ILIAS 5.0 to 5.1** is found in the GitHub branch **master**
+
+NEW BRANCH MASTER-ILIAS713
+----------------------------------------
+Version 3.5 (2022-09-13) for ILIAS 7.13+
+-----------------------------------
+* **Use this version on ILIAS 7.13+ Platforms, for previous ILIAS Versions use Branch master-ilias7**
+* The fromXML method from assQuestion in the ILIAS Core has changed its definition on this commit:
+* https://github.com/ILIAS-eLearning/ILIAS/commit/1576ff04a6039ce40386e707583a012b1606026a
+* We opted to create and maintain two different branches, one for ILIAS < 7.12 versions (master-ilias7) and a new one (master-ilias713), where fromXML implements the new definition.
+* We deeply apologize for the inconvenience of changing the branch on a non-major Version.
+* **
+* **Question Pool & Tests Import & Export**
+* The overwritten fromXML & toXML functions of this branch has been adapted to the new stack_for_ilias7 Version where the whole backend of the plugin has been redesigned, to fit the new STACK Core needs. 
+* This includes Export/Import functions, which won't support older files. This means, all those ILIAS7 Platforms up to date (>7.12) using this branch, will be able to create compatible export files for future releases, and vice-versa, and those files won't be compatible with older platforms.
+* Please inform the teachers about this topic, you can also use the current default Version 3.4.4 if you decide to keep the older files format, remember that STACK supports the import and export questions in bulk also with the MoodleXML Format.
+
+Version 3.4.2 (2022-02-11) for ILIAS 7 and ILIAS 6
+----------------------------------------
+Solves Composer install warning regarding duplicate class definition.
+
+
+Version 3.4.1 (2021-11-04) for ILIAS 7 and ILIAS 6
+----------------------------------------
+Solves #31405 bug report.
+
+
+Version 3.4.0 (2021-09-13) for ILIAS 7 and ILIAS 6
+----------------------------------------
+This version includes the STACK core 4.2.2, this STACK version requires a Maxima Version =>5.41, if your installation runs this plugin with a Maxima Pool, the Maxima Pool must include the stack core required files of STACK version 2019090200.
+Please notice you can use this version with both ILIAS 6 and 7, but includes no new features and uses the old (2019) STACK Core Version.
+
 
 Version 3.2.0 (2020-06-18) for ILIAS 6
 ----------------------------------------
