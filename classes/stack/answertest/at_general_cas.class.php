@@ -125,6 +125,8 @@ class stack_answertest_general_cas extends stack_anstest {
         $ta = stack_utils::logic_nouns_sort($this->tanskey, 'add');
         $sa = stack_utils::logic_nouns_sort($this->sanskey, 'add');
         $op = stack_utils::logic_nouns_sort($this->atoption, 'add');
+        $ta = stack_utils::get_out_stacklet($ta);
+        $sa = stack_utils::get_out_stacklet($sa);
 
         $cascommands = array();
         // Normally the prefix equality should be the identity function in the context of answer tests.

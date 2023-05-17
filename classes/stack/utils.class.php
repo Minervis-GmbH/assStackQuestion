@@ -1305,6 +1305,22 @@ class stack_utils
 
         return $str;
     }
+    public static function get_out_stacklet($expression) {
+        
+        if(strpos($expression, 'stacklet') !== false){
+            $expression = str_replace(',', ' = ', $expression);
+            $expression = str_replace(array('stacklet','(', ')'), '', $expression);  
+        }
+        return $expression;
+    }
+    public static function make_stacklet($expression) {
+        
+        if(strpos($expression, '=') !== false){
+            $expression = str_replace('=', ' , ', $expression);
+            $expression = 'stacklet('.trim($expression) . ')';  
+        }
+        return $expression;
+    }
 
     /*
      * This function takes user input of the form "option:arg" and splits them up.
